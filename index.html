@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devloper</title>
+    <style>
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playwrite+HU:wght@100..400&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+
+.logo {
+  font-family: 'Playwrite', sans-serif;
+  font-size: 45px;
+  color: #fff;
+  position: relative;
+  margin: 0px;
+  right: 380px;
+  text-shadow:
+    0 0 5px rgb(148, 213, 17),
+    0 0 10px rgb(119, 210, 14),
+    0 0 20px rgb(152, 166, 154),
+    0 0 40px rgb(0, 205, 205);
+  animation: glowPulse 1s ease-in-out infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow:
+      0 0 5px rgb(7, 248, 128),
+      0 0 10px rgb(238, 103, 8),
+      0 0 20px rgb(42, 46, 46),
+      0 0 40px rgb(43, 43, 171);
+  }
+  to {
+    text-shadow:
+      0 0 10px rgb(19, 163, 163),
+      0 0 20px rgb(16, 151, 48),
+      0 0 30px rgb(62, 160, 13),
+      0 0 60px rgb(19, 164, 164);
+  }
+}
+*{
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-color: rgb(0, 0, 33);
+            color: white;
+            font-family: 'Poppins', sans-serif;
+
+        }
+        nav{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90px;
+            margin: 0;
+            height: 10vh;
+            background: linear-gradient(-45deg, #c7dced, #88cdf3, #12ace3, #047da5,#042e72);
+            background-size: 400% 400%;
+            animation: gradient 3s ease infinite;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+        
+        nav ul{
+            display: flex;
+            left: 30%;
+            margin: 0px ;
+
+
+
+        }
+        nav ul li{
+            list-style: none;
+            margin: 0 23px;
+        } 
+        .fristsection{
+            display:flex;
+            justify-content: space-around;
+            margin: 40px 
+        }
+
+        .fristsection div{
+            width: 30%;
+        }
+        
+        .leftSection{
+            background-color: red;
+            display: flex;
+            
+        }
+        .rightSection{
+            background-color: yellow ;
+        }
+    </style>
+
+</head>
+<body>
+    <header>
+        <nav>
+        <div class="logo">𝓞𝓝</div>
+        <div class="right"></div>
+        <ul>  
+            <li>𝐇𝐎𝐌𝐄 </li>
+            <li>𝐀𝐁𝐎𝐔𝐓</li>
+            <li>𝐒𝐄𝐑𝐕𝐈𝐂𝐄𝐒 </li>
+            <li>𝐏𝐑𝐎𝐉𝐄𝐂𝐓 </li>
+            <li>𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌𝐄</li>  
+        </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="fristsection"></section>
+        <div class="leftSection"> left</div> <div class="rightSection">right</div>
+    </main>
+    
+</body>
+</html>
+

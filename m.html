@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Omkar - Developer Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@600&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background-color: rgb(0, 0, 33);
+      color: white;
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    #tsparticles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 60px;
+      height: 10vh;
+      background: linear-gradient(-45deg, #c7dced, #88cdf3, #12ace3, #047da5, #042e72);
+      background-size: 400% 400%;
+      animation: gradient 5s ease infinite;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    @keyframes gradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 36px;
+      font-weight: 600;
+      color: #fff;
+      text-shadow:
+        0 0 5px #7fff00,
+        0 0 10px #39ff14,
+        0 0 20px #00ffc8,
+        0 0 40px #0ff;
+      animation: glowPulse 2s ease-in-out infinite alternate;
+    }
+
+    @keyframes glowPulse {
+      from { text-shadow: 0 0 5px #00fff7, 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 40px #00ffcc; }
+      to { text-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff, 0 0 60px #0ff; }
+    }
+
+    nav ul {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    nav ul li {
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    nav ul li:hover {
+      color: #ffeb3b;
+    }
+
+    .firstSection {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 100px 60px;
+    }
+
+    .leftSection {
+      width: 45%;
+      font-size: 2.5rem;
+      line-height: 1.4;
+    }
+
+    .leftSection span {
+      color: #00ffe5;
+    }
+
+    .rightSection {
+      width: 45%;
+    }
+
+    .rightSection img {
+      width: 100%;
+      animation: float 3s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0); }
+    }
+
+    .contactSection {
+      padding: 80px 60px;
+      background-color: #0a0a23;
+    }
+
+    .contactSection h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .contactForm {
+      max-width: 600px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .contactForm input,
+    .contactForm textarea {
+      padding: 15px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      background: #111;
+      color: white;
+    }
+
+    .contactForm button {
+      background: #12ace3;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .contactForm button:hover {
+      background: #0a8cbe;
+    }
+
+    .resumeSection {
+      padding: 80px 60px;
+      text-align: center;
+      background-color: #0a0a25;
+    }
+
+    .resumeSection h2 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .resumeSection p {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      color: #ccc;
+    }
+
+    .resumeBtn {
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      background: #00ffee;
+      color: #000;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .resumeBtn:hover {
+      background: #0ff;
+      color: #111;
+      transform: scale(1.05);
+    }
+
+    .experienceSection {
+      padding: 80px 60px;
+      background-color: #0a0a23;
+      text-align: center;
+    }
+
+    .experienceSection h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #00ffe5;
+    }
+
+    .experienceContent p {
+      font-size: 1.2rem;
+      margin-bottom: 15px;
+      color: #ddd;
+    }
+  </style>
+</head>
+<body>
+  <div id="tsparticles"></div>
+
+  <header>
+    <nav>
+      <div class="logo">𝓞𝓜𝓝</div>
+      <ul>
+        <li>𝐇𝐎𝐌𝐄</li>
+        <li>𝐀𝐁𝐎𝐔𝐓</li>
+        <li>𝐒𝐄𝐑𝐕𝐈𝐂𝐄𝐒</li>
+        <li>𝐏𝐑𝐎𝐉𝐄𝐂𝐓</li>
+        <li>𝐑𝐄𝐒𝐔𝐌𝐄</li>
+        <li>𝐂𝐎𝐍𝐓𝐀𝐂𝐓 𝐌𝐄</li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="firstSection">
+      <div class="leftSection" data-aos="fade-right">
+        Hi, My name is <span>Omkar</span><br>
+        and I am a <span class="typed-text"></span>
+      </div>
+      <div class="rightSection" data-aos="fade-left">
+        <img src="3d.jpeg" alt="3D Developer Illustration">
+      </div>
+    </section>
+
+    <section class="resumeSection" data-aos="fade-up">
+      <h2>My Resume</h2>
+      <p>Click the button below to download my resume in PDF format.</p>
+      <a href="resume.pdf" download class="resumeBtn">Download Resume</a>
+    </section>
+
+    <section class="experienceSection" data-aos="fade-up">
+      <h2>Past Experience</h2>
+      <div class="experienceContent">
+        <p>Internship at Software Appetite - Data Extractor0 Role</p>
+        <p>Contributed to Open Source Projects on GitHub</p>
+        <p> IT Head - College Committee(JR) College </p>
+      </div>
+    </section>
+
+    <section class="contactSection" data-aos="fade-up">
+      <h2>Contact Me</h2>
+      <form class="contactForm">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea rows="5" placeholder="Your Message"></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+    new Typed(".typed-text", {
+      strings: ["Engineer", "Developer", "Tech Enthusiast", "Graphic Designer"],
+      typeSpeed: 70,
+      backSpeed: 50,
+      loop: true
+    });
+
+    tsParticles.load("tsparticles", {
+      particles: {
+        number: { value: 60 },
+        size: { value: 3 },
+        move: { enable: true, speed: 2 },
+        line_linked: { enable: true, distance: 150, color: "#00ffff", opacity: 0.4 },
+        color: { value: "#ffffff" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+        },
+      },
+    });
+  </script>
+</body>
+</html>
